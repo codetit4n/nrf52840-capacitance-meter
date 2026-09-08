@@ -1,7 +1,6 @@
 // https://github.com/codetit4n/nrf52840-baremetal/blob/main/uarte-tx-only/src/main.c
 #include "uarte.h"
-
-#define REG32(addr) (*(volatile uint32_t*)(addr))
+#include "board.h"
 
 #define NRF_UARTE0_BASE 0x40002000UL
 #define NRF_P0_BASE 0x50000000UL
@@ -27,6 +26,7 @@
 #define EVENTS_TXSTOPPED REG32(NRF_UARTE0_BASE + 0x158)
 
 #define UART_TX_BUF_SIZE 256
+
 static uint8_t tx_buf[UART_TX_BUF_SIZE];
 
 static void tx_send(const uint8_t* tx, size_t len) {
