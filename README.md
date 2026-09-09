@@ -6,6 +6,18 @@
 A simple [nRF52840](https://www.nordicsemi.com/Products/nRF52840)-based learning project for measuring small capacitors
 using RC timing and ADC measurements.
 
+## Current state
+
+The RC charge/discharge circuit is working, and the nRF52840 is now reading the capacitor voltage through SAADC.
+
+<p align="center">
+  <img src="assets/saadc-minicom.gif" alt="Capacitor charge and discharge demo" width="450">
+</p>
+
+<p align="center">
+  <em>Minicom output showing the capacitor charge/discharge cycle and raw SAADC readings.</em>
+</p>
+
 ## Notes
 
 - Some low-level code is reused from my earlier [nRF52840 bare-metal project](https://github.com/codetit4n/nrf52840-baremetal).
