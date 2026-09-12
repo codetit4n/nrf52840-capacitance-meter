@@ -8,14 +8,15 @@ using RC timing and ADC measurements.
 
 ## Current state
 
-The RC charge/discharge circuit is working, and the nRF52840 is now reading the capacitor voltage through SAADC.
+The RC charge/discharge circuit is working, and the nRF52840 is now reading the capacitor voltage through SAADC,
+converting the readings to millivolts, and detecting discharge and charge thresholds.
 
 <p align="center">
   <img src="assets/saadc-minicom.gif" alt="Capacitor charge and discharge demo" width="450">
 </p>
 
 <p align="center">
-  <em>Minicom output showing the capacitor charge/discharge cycle and raw SAADC readings.</em>
+  <em>Minicom output showing the capacitor charge/discharge cycle and SAADC voltage readings.</em>
 </p>
 
 ## Notes

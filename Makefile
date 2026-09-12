@@ -20,7 +20,7 @@ CFLAGS = $(CPUFLAGS) -Wall -Wextra -O0 -g3 -ffreestanding
 LDFLAGS = $(CPUFLAGS) -nostartfiles -nostdlib -Wl,-Tlinker.ld
 
 # Source files
-SRCS = startup.s $(SRC_DIR)/main.c $(SRC_DIR)/uarte.c
+SRCS = startup.s $(wildcard $(SRC_DIR)/*.c)
 
 # Object files go inside build/
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)

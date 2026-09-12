@@ -23,17 +23,21 @@
 - [x] Printed raw ADC samples over UARTE
 - [x] Verified discharged readings are near 0
 - [x] Verified charged readings are stable at ~3430 raw ADC counts
-- [ ] Convert raw ADC readings to voltage
-- [ ] Sample the capacitor while it is charging
-- [ ] Add a hardware timer
-- [ ] Measure time to the chosen voltage threshold
+- [x] Converted raw ADC readings to millivolts
+- [x] Verified charged voltage is ~3.0 V
+- [x] Added voltage-based discharge detection
+  - Discharge threshold: 30 mV
+- [x] Added voltage-based charge threshold detection
+  - Charge threshold: ~1900 mV
+  - Based on ~63.2% of the measured final voltage
+- [x] Repeatedly sampled the capacitor during charge/discharge
+- [x] Verified reliable threshold crossing with SAADC
+- [ ] Configure a hardware timer
+- [ ] Configure timer for convenient time resolution
+- [ ] Start timer when capacitor charging begins
+- [ ] Capture elapsed time when the charge threshold is reached
+- [ ] Print measured charge time over UARTE
 - [ ] Calculate capacitance from the measured charge time
 - [ ] Compare calculated capacitance with the multimeter reading
 - [ ] Test multiple capacitor values
 - [ ] Record measurement error and repeatability
-
-## Current target
-
-Convert the SAADC raw reading into voltage and verify it against the multimeter.
-
-After that, begin measuring the capacitor during the charging curve and add accurate timing.
