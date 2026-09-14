@@ -32,12 +32,16 @@
   - Based on ~63.2% of the measured final voltage
 - [x] Repeatedly sampled the capacitor during charge/discharge
 - [x] Verified reliable threshold crossing with SAADC
-- [ ] Configure a hardware timer
-- [ ] Configure timer for convenient time resolution
-- [ ] Start timer when capacitor charging begins
-- [ ] Capture elapsed time when the charge threshold is reached
-- [ ] Print measured charge time over UARTE
-- [ ] Calculate capacitance from the measured charge time
-- [ ] Compare calculated capacitance with the multimeter reading
+- [x] Configured a hardware timer
+- [x] Configured timer for convenient time resolution
+- [x] Started timer when capacitor charging begins
+- [x] Captured elapsed time when the charge threshold is reached
+- [x] Printed measured charge time over UARTE
+- [x] Calculated capacitance from the measured charge time
+- [x] Compared calculated capacitance with the multimeter reading
 - [ ] Test multiple capacitor values
 - [ ] Record measurement error and repeatability
+- [ ] Finish documentation
+  - Circuit diagram
+  - Demo
+  - README

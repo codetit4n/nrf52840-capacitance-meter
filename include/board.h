@@ -1,5 +1,3 @@
-#include <stdint.h>
-
 #define REG32(addr) (*(volatile uint32_t*)(addr))
 
 #define DISCHARGE_THRESHOLD_MV 30 // considered fully discharged below 30 mV

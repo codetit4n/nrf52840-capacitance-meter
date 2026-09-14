@@ -2,6 +2,8 @@
 #include "uarte.h"
 #include "board.h"
 
+#include <stdint.h>
+
 #define NRF_UARTE0_BASE 0x40002000UL
 #define NRF_P0_BASE 0x50000000UL
 
