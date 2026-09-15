@@ -39,7 +39,7 @@ $(BUILD_DIR):
 
 # Link the ELF
 $(ELF): $(OBJS) | $(BUILD_DIR)
-	$(CC) $(LDFLAGS) -o $@ $^ -lgcc
+	$(CC) $(LDFLAGS) -o $@ $^ -lgcc # provides __aeabi_uldivmod for 64-bit integer division
 
 # Compile C files
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c | $(BUILD_DIR)

@@ -56,6 +56,14 @@ The meter has been tested across several capacitor values, with measurements com
 - Integer-based voltage and capacitance calculations
 - UARTE output for measurement results
 
+### Serial output
+
+UARTE output can be viewed with [Minicom](https://www.man7.org/linux/man-pages/man1/minicom.1.html) at 1M baud:
+
+```shell
+minicom -D /dev/ttyACM0 -b 1000000
+```
+
 ## Measurements
 
 **0.1 µF disc capacitor**
@@ -106,6 +114,10 @@ The meter has been tested across several capacitor values, with measurements com
 
 <p align="left">
   <em>Reference (multimeter): 877 µF</em>
+</p>
+
+<p align="left">
+  <em>Note: Larger capacitors take longer to measure because the charging time increases with the RC time constant, τ = RC.</em>
 </p>
 
 ## Measurement results
