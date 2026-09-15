@@ -1,5 +1,11 @@
 # Progress
 
+## Status
+
+**Complete.**
+
+The core capacitance meter implementation is finished, tested across multiple capacitor values, and documented.
+
 ## Checklist
 
 - [x] Created bare-metal nRF52840 project
@@ -32,16 +38,31 @@
   - Based on ~63.2% of the measured final voltage
 - [x] Repeatedly sampled the capacitor during charge/discharge
 - [x] Verified reliable threshold crossing with SAADC
-- [x] Configured a hardware timer
-- [x] Configured timer for convenient time resolution
+- [x] Configured a 32-bit hardware timer
+- [x] Configured timer for 1 µs resolution
 - [x] Started timer when capacitor charging begins
 - [x] Captured elapsed time when the charge threshold is reached
 - [x] Printed measured charge time over UARTE
 - [x] Calculated capacitance from the measured charge time
-- [x] Compared calculated capacitance with the multimeter reading
-- [ ] Test multiple capacitor values
-- [ ] Record measurement error and repeatability
-- [ ] Finish documentation
+- [x] Added integer-based nF and µF output
+- [x] Fixed arithmetic overflow for larger capacitor values
+- [x] Compared calculated capacitance with multimeter readings
+- [x] Tested multiple capacitor values
+  - ~0.1 µF disc capacitor
+  - 10 µF electrolytic capacitor
+  - 22 µF electrolytic capacitor
+  - 100 µF electrolytic capacitor
+  - 1000 µF electrolytic capacitor
+- [x] Recorded measurement error and repeatability
+- [x] Finished documentation
   - Circuit diagram
-  - Demo
+  - Hardware setup
+  - Measurement demos
+  - Measurement comparison
   - README
+
+## Final result
+
+A working bare-metal capacitance meter using RC timing, the nRF52840 SAADC, and a hardware timer.
+
+Tested from approximately 0.1 µF to 1000 µF, with measurements compared against a multimeter.

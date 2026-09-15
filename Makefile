@@ -39,7 +39,7 @@ $(BUILD_DIR):
 
 # Link the ELF
 $(ELF): $(OBJS) | $(BUILD_DIR)
-	$(CC) $(LDFLAGS) -o $@ $^
+	$(CC) $(LDFLAGS) -o $@ $^ -lgcc
 
 # Compile C files
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c | $(BUILD_DIR)

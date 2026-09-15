@@ -13,6 +13,5 @@
 #define TIMER_TASKS_CAPTURE0_REG REG32(NRF_TIMER0_BASE + 0x040)
 
 void init_timer0(void);
-void start_timer(void);
-void stop_timer(void);
-uint32_t read_ctr(void);
+void clear_ctr_and_start_timer(void);
+uint32_t stop_timer_and_read_ctr(void);

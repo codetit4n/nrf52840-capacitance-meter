@@ -15,30 +15,36 @@ int main(void) {
 	while (1) {
 		/* Discharge capacitor */
 		set_pin_low(PIN);
-		uarte_write("CAPACITOR: DISCHARGING\r\n", sizeof("CAPACITOR: DISCHARGING\r\n") - 1);
-		uint32_t mV = 0;
-		do {
-			mV = saadc_read();
-		} while (mV > DISCHARGE_THRESHOLD_MV);
-		log_volts(mV);
 
-		start_timer();
+		// uarte_write("CAPACITOR: DISCHARGING\r\n", sizeof("CAPACITOR: DISCHARGING\r\n") -
+		// 1);
+
+		uint32_t data = 0;
+		do {
+			data = saadc_read();
+		} while (data > DISCHARGE_THRESHOLD_MV);
+
+		// log_volts(data);
+
+		clear_ctr_and_start_timer();
 
 		/* Charge capacitor */
 		set_pin_high(PIN);
-		uarte_write("CAPACITOR: CHARGING\r\n", sizeof("CAPACITOR: CHARGING\r\n") - 1);
-		mV = 0;
+
+		// uarte_write("CAPACITOR: CHARGING\r\n", sizeof("CAPACITOR: CHARGING\r\n") - 1);
+
+		data = 0;
 		do {
-			mV = saadc_read();
-		} while (mV < CHARGE_THRESHOLD_MV);
-		log_volts(mV);
+			data = saadc_read();
+		} while (data < CHARGE_THRESHOLD_MV);
 
-		stop_timer();
+		// log_volts(data);
 
-		uint32_t et = read_ctr();
-		log_elapsed_time(et);
+		data = stop_timer_and_read_ctr();
 
-		uint32_t nF = (et * 1000) / 10030;
+		// log_elapsed_time(data);
+
+		uint32_t nF = ((uint64_t)data * 1000) / 10030;
 		log_capacitance_nF(nF);
 
 		uint32_t uF_int = nF / 1000;
